@@ -1,0 +1,7 @@
+.nav-link
+{
+    font-size: 20px;
+}
+.offcanvas, .offcanvas-lg, .offcanvas-md, .offcanvas-sm, .offcanvas-xl, .offcanvas-xxl{
+    background: linear-gradient(to bottom,purple, black);
+  }
