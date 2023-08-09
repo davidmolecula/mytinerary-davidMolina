@@ -11,7 +11,9 @@ import 'swiper/css/autoplay'
 
 const carousel = () => {
   return (
+  
     <Swiper
+    
         autoplay={true}
         slidesPerView={2}
         grid={{
@@ -24,9 +26,11 @@ const carousel = () => {
         modules={[Grid, Pagination, Autoplay]}
         className="mySwiper"
       >
+        
         {Data.map((result,index)=>(
         <SwiperSlide key={index}>
           <img src={result.url}  alt="" />
+          <p class="carousel-image-p">{result.title}</p>
         </SwiperSlide>
         ))}
         
