@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
-import '../styles/swiper.css';
+import '../styles/Swiper.css';
 import { Grid, Pagination, Autoplay } from 'swiper/modules';
 import Data from '../Data.json';
 import 'swiper/css/autoplay'
@@ -11,7 +11,8 @@ import 'swiper/css/autoplay'
 
 const carousel = () => {
   return (
-  
+  <>
+  <h1>Popular Mytinerarys</h1>
     <Swiper
     
         autoplay={true}
@@ -36,6 +37,7 @@ const carousel = () => {
         
         
       </Swiper>
+      </>
   )
 }
 

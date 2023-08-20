@@ -1,11 +1,5 @@
-import Header from './components/Header.jsx';
-import Footer from './components/Footer.jsx';
-import Hero from './components/Hero.jsx';
-import Carousel from './components/Carousel2.jsx';
-import TituloCarousel from './components/TituloCarousel.jsx'
-import './App.css';
-import './styles/Header.css';
-import './styles/Hero.css'
+import {RouterProvider} from 'react-router-dom'
+import router from './router/router.jsx'
 
 
 
@@ -15,13 +9,8 @@ function App()
 
   
   return (
-    <>
-    <Header/>
-    <Hero/>
-    <TituloCarousel/>
-    <Carousel/>
-      <Footer/>
-    </>
+    
+    <RouterProvider router={router}/>
     
   )
 }

@@ -1,10 +1,15 @@
-import {useState} from 'react'
+
+import '../styles/Swiper.css'
+import Hero from '../components/Hero'
+
 
 const Home = () => {
 
-    let {state, setState}= useState(0);
+
     return (
-    <div>Home</div>
+        <>
+        <Hero/>  
+        </>
     )
 }
 

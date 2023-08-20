@@ -8,7 +8,7 @@
   }
   h1{
     text-shadow: 1px 1px 2px black;
-    color: white;
+    color: white!important;
     text-align: center;
   }
   .swiper {
@@ -26,15 +26,17 @@
     height: calc(80%/ 2);
     box-shadow: 1px 1px 2px black;
     /* Center slide text vertically */
-    display: flex;
+    display: flex!important;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 200px!important;
   }
   .swiper-slide img{
     width: 100%;
     height: 100%;
-    position: absolute;
   }
+
 .carousel-image-p{
   position: absolute;
   color: white;
@@ -47,4 +49,3 @@
       width: 100%;
     }
   }
- 
