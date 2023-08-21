@@ -31,7 +31,7 @@ const carousel = () => {
         {Data.map((result,index)=>(
         <SwiperSlide key={index}>
           <img src={result.url}  alt="" />
-          <p class="carousel-image-p">{result.title}</p>
+          <p className="carousel-image-p">{result.title}</p>
         </SwiperSlide>
         ))}
         

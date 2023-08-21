@@ -1,0 +1,30 @@
+.cards-container{
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.card-container{
+    height: 15em;
+    width: 10em;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+.card-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    height: 2.8em;
+    text-align: center;
+}
+
+.card-container img{
+    width: 100%;
+    height: 10em;
+}
