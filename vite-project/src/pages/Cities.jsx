@@ -3,6 +3,7 @@ import Card from '../components/Card.jsx'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
+import Error from '../components/Error.jsx'
 
 
 const Cities = () => {
@@ -41,7 +42,9 @@ const Cities = () => {
         )
       })
       
-    }
+      }
+    
+    
     </div>
     </>
     

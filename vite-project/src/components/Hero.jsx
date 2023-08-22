@@ -1,6 +1,8 @@
 import '../styles/Hero.css'
 
 const Hero = () => {
+
+
   return (
     <div className="container hero">
         <div className="row pb-0 pe-lg-0 align-items-center rounded-3 shadow-lg">
@@ -12,7 +14,7 @@ const Hero = () => {
           </div>
         
           <div className="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-          <img className="rounded-lg-3" src="src/img-mindhub-example/25.jpg" alt="" width="720"></img>
+          <img className="rounded-lg-3" src="https://i.postimg.cc/phtZNQT2/Florencia.jpg" alt="" width="820"></img>
           </div>
         </div>
       
