@@ -8,7 +8,7 @@ const Home = () => {
 
     return (
         <>
-        <Hero/>  
+        <Hero title="Find your perfect trip" image="https://i.postimg.cc/phtZNQT2/Florencia.jpg"/>  
         </>
     )
 }

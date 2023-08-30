@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from '../components/Card.jsx'
 import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { useEffect,useRef, useState } from 'react'
 import {Link} from 'react-router-dom'
 import Error from '../components/Error.jsx'
 
@@ -9,6 +9,7 @@ import Error from '../components/Error.jsx'
 const Cities = () => {
 
   const [cities,setCities]=useState();
+  let inputSearch=useRef();
 
   useEffect(()=>{
   axios.get('http://localhost:7000/api/cities?name=')
@@ -16,13 +17,18 @@ const Cities = () => {
   .catch(err =>console.log(err))
   }, []);
 
-  const handleInputChange= async(city)=>{
+  const handleSearch= async(city)=>{
+    console.log(inputSearch)
     try
     {
-      const response= await axios.get(`http://localhost:7000/api/cities?name=${city.target.value}`)
+      const response= await axios.get(`http://localhost:7000/api/cities?name=${inputSearch.current.value}`)
       setCities(response.data.cities)
   } catch(error){
-    console.log(error)
+    if(error.response.status===404){
+      setCities([])
+    }else{
+          console.log(error)
+    }
   }
   }
 
@@ -31,16 +37,19 @@ const Cities = () => {
   return (
     <>
     <h1>This is the city</h1>
-    <input onChange={handleInputChange} type="text" defaultValue="Type here" />
+    <input ref={inputSearch}  type="text" placeHolder="Type here" />
+    <button onClick={handleSearch}>Buscar</button>
     <div className="cards-container">
     {
-      cities?.map((city)=>{
+      cities?.length>0
+      ?cities?.map((city)=>{
         return(
           <Link key={city._id} to={`/cities/${city._id}`}>
           <Card name={city.name} image={city.image}/>
           </Link>
         )
       })
+      : <div className="cards-container text-white"><h2>No se encontraron eventos</h2></div>
       
       }
     

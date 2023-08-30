@@ -1,4 +1,4 @@
-
+import {Link} from 'react-router-dom'
 
 const Footer = () => {
 return (
@@ -24,8 +24,8 @@ return (
     <div className="col mb-3">
       <h4 className="text-light text-bold">Explore</h4>
       <ul className="nav flex-column">
-        <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-light">Home</a></li>
-        <li className="nav-item mb-2"><a href="cities.html" className="nav-link p-0 text-light">Cities</a></li>
+        <li className="nav-item mb-2"><Link to={'/'} className="nav-link p-0 text-light">Home</Link></li>
+        <li className="nav-item mb-2"><Link to={'/cities'}  className="nav-link p-0 text-light">Cities</Link></li>
      
       </ul>
     </div>

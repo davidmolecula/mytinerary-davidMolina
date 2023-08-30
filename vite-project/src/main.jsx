@@ -6,7 +6,7 @@ import './index.css'
 
 import './styles/swiper.css';
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+ 
     <App />
-  </React.StrictMode>,
+  
 )
