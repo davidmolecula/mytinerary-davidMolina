@@ -4,32 +4,34 @@ import axios from 'axios'
 import { useEffect,useRef, useState } from 'react'
 import {Link} from 'react-router-dom'
 import Error from '../components/Error.jsx'
+import { useDispatch, useSelector } from 'react-redux'
+import {filter_cities, get_cities} from '../stores/actions/cityActions.js'
+
 
 
 const Cities = () => {
 
-  const [cities,setCities]=useState();
+  
+
+  const cities=useSelector((cities)=>cities.cityReducer.cities)
+  console.log("pepe")
+  console.log(cities)
+
+  const dispatch=useDispatch();
+
   let inputSearch=useRef();
 
+
   useEffect(()=>{
-  axios.get('http://localhost:7000/api/cities?name=')
-  .then(response => setCities(response.data.cities))
-  .catch(err =>console.log(err))
+      dispatch(get_cities())
   }, []);
 
-  const handleSearch= async(city)=>{
-    console.log(inputSearch)
-    try
-    {
-      const response= await axios.get(`http://localhost:7000/api/cities?name=${inputSearch.current.value}`)
-      setCities(response.data.cities)
-  } catch(error){
-    if(error.response.status===404){
-      setCities([])
-    }else{
-          console.log(error)
-    }
-  }
+  const handleSearch= (city)=>{
+ 
+      dispatch(filter_cities({
+        name:inputSearch.current.value
+      }))
+  
   }
 
 
@@ -37,14 +39,14 @@ const Cities = () => {
   return (
     <>
     <h1>This is the city</h1>
-    <input ref={inputSearch}  type="text" placeHolder="Type here" />
+    <input ref={inputSearch}  type="text" placeholder="Type here" />
     <button onClick={handleSearch}>Buscar</button>
     <div className="cards-container">
     {
       cities?.length>0
       ?cities?.map((city)=>{
         return(
-          <Link key={city._id} to={`/cities/${city._id}`}>
+          <Link key={city._id} to={`/itineraries/${city._id}`} className='link-unstyled link-unstyled:link link-unstyled:hover text-white'>
           <Card name={city.name} image={city.image}/>
           </Link>
         )

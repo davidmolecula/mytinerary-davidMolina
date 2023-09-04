@@ -9,6 +9,10 @@ import City from '../pages/City.jsx'
 
 import {useParams} from 'react-router-dom'
 
+import Login from '../pages/Login.jsx'
+
+import Itinerary from '../pages/Itinerary.jsx'
+
 const router= createBrowserRouter([
     
     {
@@ -26,7 +30,15 @@ const router= createBrowserRouter([
             },
             {
                 path:'/cities/:id',
-                element: <City/>
+                element: <Itinerary/>
+            },
+            {
+                path:'/login',
+                element:<Login/>
+            },
+            {
+                path:'/itineraries/:id',
+                element:<Itinerary/>
             }
         ]
         
